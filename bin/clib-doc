@@ -26,7 +26,7 @@ class Module(object):
     def __init__(self, input_dir, build_dir):
         self.input_dir = input_dir
         self.name = os.path.basename(input_dir)
-        self.target_dir = os.path.join(build_dir, self.name)
+        self.target_dir = self.name
 
         pkg_fname = os.path.join(input_dir, 'package.json')
         self.pkg = json.load(open(pkg_fname, 'r'))
@@ -50,7 +50,7 @@ if __name__ == '__main__':
         generator = doxygen.Generator(pkg, pkg_path, args.destdir)
         generator.run()
     elif os.path.exists('./deps'):
-        build_dir = os.path.abspath('./_docs')
+        build_dir = './_docs'
 
         if not os.path.exists(build_dir):
             os.makedirs(build_dir)
