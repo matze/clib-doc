@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>utf8 API documentation</title>
+    <link rel="stylesheet" type="text/css" href="clibdoc.css">
+  </head>
+  <body>
+    <div id="top-bar">
+      <div class="centered">
+        <div class="left">
+          <h1>utf8</h1>
+        </div>
+        <div class="right navbar">
+          <a href="#content">Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="centered">
+        <h2 id="top">Synopsis</h2>
+
+        <p>A whatwg compliant UTF8 encoding and decoding library</p>
+        <dl id="description">
+          <dt>Version</dt>
+          <dd>0.0.1</dd>
+
+          <dt>Source</dt>
+          <dd><a href="https://github.com/jwerle/libutf8">jwerle/libutf8</a></dd>
+
+          <dt>License</dt>
+          <dd>MIT</dd>
+        </dl>
+
+        <h3>API</h3>
+
+        <div class="api-list">
+          
+          <a href="#utf8_8h_1a0667657c5d8b8c48f14a77b97db46302">utf8_decode</a><br/>
+          
+          <a href="#utf8_8h_1a2ae26ebad0a0683f1ef9ec4fcd7571da">utf8_encode</a><br/>
+          
+        </div>
+
+        <h2>Details</h2>
+        
+
+        
+        <dl class="function">
+          <dt id="utf8_8h_1a0667657c5d8b8c48f14a77b97db46302">utf8_decode ()</dt>
+          <dd>
+            <pre>UTF8_EXTERN char *
+utf8_decode         (const char * );</pre>
+
+          
+          <p>Returns a utf8 decoded string from a given utf8 encoded string.</p>
+          
+          <p>Return value: Returns a `char *' or `NULL' in the case of an error.</p>
+          
+          <p>Error: In the occurence of an error `errno' will be populated with an error code which can be interpreted with `utf8_perror(str)' </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="utf8_8h_1a2ae26ebad0a0683f1ef9ec4fcd7571da">utf8_encode ()</dt>
+          <dd>
+            <pre>UTF8_EXTERN char *
+utf8_encode         (const char * );</pre>
+
+          
+          <p>Returns a utf8 encoded string from a given utf8 decoded string.</p>
+          
+          <p>Return value: Returns a `char *' or `NULL' in the case of an error.</p>
+          
+          <p>Error: In the occurence of an error `errno' will be populated with an error code which can be interpreted with `utf8_perror(str)' </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+      </div>
+      <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>
+    </div>
+  </body>
+</html>

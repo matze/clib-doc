@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>progress API documentation</title>
+    <link rel="stylesheet" type="text/css" href="clibdoc.css">
+  </head>
+  <body>
+    <div id="top-bar">
+      <div class="centered">
+        <div class="left">
+          <h1>progress</h1>
+        </div>
+        <div class="right navbar">
+          <a href="#content">Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="centered">
+        <h2 id="top">Synopsis</h2>
+
+        <p>Simple progress bar display for the terminal</p>
+        <dl id="description">
+          <dt>Version</dt>
+          <dd>0.0.4</dd>
+
+          <dt>Source</dt>
+          <dd><a href="https://github.com/jwerle/progress.h">jwerle/progress.h</a></dd>
+
+          <dt>License</dt>
+          <dd>MIT</dd>
+        </dl>
+
+        <h3>API</h3>
+
+        <div class="api-list">
+          
+          <a href="#progress_8h_1a456d19724c7e5d226d7925ad71d4e379">progress_data_free</a><br/>
+          
+          <a href="#progress_8h_1adcbf95bece1e40062d2ee54ae1bd1100">progress_data_new</a><br/>
+          
+          <a href="#progress_8h_1a21d2fc1d5e7f20923aeaef560c23c82e">progress_emit</a><br/>
+          
+          <a href="#progress_8h_1adef8ca1d57bf9ed76446d12b750be93b">progress_event_free</a><br/>
+          
+          <a href="#progress_8h_1a02d0a6a9551f13a27605982bc614786c">progress_event_listener_free</a><br/>
+          
+          <a href="#progress_8h_1a6c2616322ffb81c14fff0c7ba9b6cd0b">progress_event_listener_new</a><br/>
+          
+          <a href="#progress_8h_1ac5d40936e1e2138a14617053be89b8b2">progress_event_new</a><br/>
+          
+          <a href="#progress_8h_1ae5da946291b28b8168540107a90c695f">progress_free</a><br/>
+          
+          <a href="#progress_8h_1ac58a538cefca66e22a1aad7fcf6a6b38">progress_inspect</a><br/>
+          
+          <a href="#progress_8h_1a2c48d63c29da634692131d69ae9952c9">progress_new</a><br/>
+          
+          <a href="#progress_8h_1a3db32bfc61dcf6d1f58eea2a08048b42">progress_on</a><br/>
+          
+          <a href="#progress_8h_1afe51d221852ecbd07eab945bf4731877">progress_tick</a><br/>
+          
+          <a href="#progress_8h_1a665e7926be4ecb939e062d177132d237">progress_write</a><br/>
+          
+          <a href="#progress_8h_1adc1a89c7103424a0079d8162fd064802">replace_str</a><br/>
+          
+        </div>
+
+        <h2>Details</h2>
+        
+        <dl class="function">
+          <dt id="structprogress">progress</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="structprogress__data">progress_data</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="structprogress__event">progress_event</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="structprogress__event__listener">progress_event_listener</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+
+        
+        <dl class="function">
+          <dt id="progress_8h_1a456d19724c7e5d226d7925ad71d4e379">progress_data_free ()</dt>
+          <dd>
+            <pre>void
+progress_data_free  (<a href="#structprogress__data">progress_data_t</a> data);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1adcbf95bece1e40062d2ee54ae1bd1100">progress_data_new ()</dt>
+          <dd>
+            <pre><a href="#structprogress__data">progress_data_t</a>
+progress_data_new   (<a href="#structprogress">progress_t</a> holder, int value);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1a21d2fc1d5e7f20923aeaef560c23c82e">progress_emit ()</dt>
+          <dd>
+            <pre>bool
+progress_emit       (<a href="#structprogress">progress_t</a> progress, <a href="#structprogress__event">progress_event_t</a> event, <a href="#structprogress__data">progress_data_t</a> data);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1adef8ca1d57bf9ed76446d12b750be93b">progress_event_free ()</dt>
+          <dd>
+            <pre>void
+progress_event_free (<a href="#structprogress__event">progress_event_t</a> event);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1a02d0a6a9551f13a27605982bc614786c">progress_event_listener_free ()</dt>
+          <dd>
+            <pre>void
+progress_event_listener_free(<a href="#structprogress__event__listener">progress_event_listener_t</a> listener);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1a6c2616322ffb81c14fff0c7ba9b6cd0b">progress_event_listener_new ()</dt>
+          <dd>
+            <pre><a href="#structprogress__event__listener">progress_event_listener_t</a>
+progress_event_listener_new(<a href="#structprogress__event">progress_event_t</a> event, progress_cb_t cb);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1ac5d40936e1e2138a14617053be89b8b2">progress_event_new ()</dt>
+          <dd>
+            <pre><a href="#structprogress__event">progress_event_t</a>
+progress_event_new  (progress_event_type_t type);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1ae5da946291b28b8168540107a90c695f">progress_free ()</dt>
+          <dd>
+            <pre>void
+progress_free       (<a href="#structprogress">progress_t</a> progress);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1ac58a538cefca66e22a1aad7fcf6a6b38">progress_inspect ()</dt>
+          <dd>
+            <pre>void
+progress_inspect    (<a href="#structprogress">progress_t</a> progress);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1a2c48d63c29da634692131d69ae9952c9">progress_new ()</dt>
+          <dd>
+            <pre><a href="#structprogress">progress_t</a>
+progress_new        (int total, size_t width);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1a3db32bfc61dcf6d1f58eea2a08048b42">progress_on ()</dt>
+          <dd>
+            <pre>bool
+progress_on         (<a href="#structprogress">progress_t</a> progress, progress_event_type_t event, progress_cb_t cb);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1afe51d221852ecbd07eab945bf4731877">progress_tick ()</dt>
+          <dd>
+            <pre>bool
+progress_tick       (<a href="#structprogress">progress_t</a> progress, int value);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1a665e7926be4ecb939e062d177132d237">progress_write ()</dt>
+          <dd>
+            <pre>void
+progress_write      (<a href="#structprogress">progress_t</a> progress);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="progress_8h_1adc1a89c7103424a0079d8162fd064802">replace_str ()</dt>
+          <dd>
+            <pre>char *
+replace_str         (char * strbuf, char * strold, char * strnew);</pre>
+
+          
+          <p>Implementation </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+      </div>
+      <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>
+    </div>
+  </body>
+</html>

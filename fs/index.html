@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>fs API documentation</title>
+    <link rel="stylesheet" type="text/css" href="clibdoc.css">
+  </head>
+  <body>
+    <div id="top-bar">
+      <div class="centered">
+        <div class="left">
+          <h1>fs</h1>
+        </div>
+        <div class="right navbar">
+          <a href="#content">Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="centered">
+        <h2 id="top">Synopsis</h2>
+
+        <p>File system API much like Node's fs module</p>
+        <dl id="description">
+          <dt>Version</dt>
+          <dd>0.1.0</dd>
+
+          <dt>Source</dt>
+          <dd><a href="https://github.com/jwerle/fs.c">jwerle/fs.c</a></dd>
+
+          <dt>License</dt>
+          <dd>MIT</dd>
+        </dl>
+
+        <h3>API</h3>
+
+        <div class="api-list">
+          
+          <a href="#fs_8h_1a7e3e713538ac541a1f77eafd047afb5e">fs_chown</a><br/>
+          
+          <a href="#fs_8h_1abbb42770f8c1404cf545c80b9ea09ab8">fs_close</a><br/>
+          
+          <a href="#fs_8h_1a345144ba18aeb8332ce4feb1df43ae0c">fs_error</a><br/>
+          
+          <a href="#fs_8h_1a5a1b8db00d6486cbbe67f7adeb7814f4">fs_exists</a><br/>
+          
+          <a href="#fs_8h_1a0e3afb5df8f0be670578efbc4b912a03">fs_fchown</a><br/>
+          
+          <a href="#fs_8h_1a3f15d961fa2c150d1f50e26cc1afaf60">fs_fnread</a><br/>
+          
+          <a href="#fs_8h_1a2ed328604cf38f7caa077d4ab5617760">fs_fnwrite</a><br/>
+          
+          <a href="#fs_8h_1a8a2e0ce70245b335d8c858893d1e6829">fs_fread</a><br/>
+          
+          <a href="#fs_8h_1ad505df494185dbbc8547e85686d12f65">fs_fsize</a><br/>
+          
+          <a href="#fs_8h_1a58ab9f54d9c971e6d0d42debdadd1394">fs_fstat</a><br/>
+          
+          <a href="#fs_8h_1a20f694b22f28b1d4ac912f49fe3dc3c8">fs_ftruncate</a><br/>
+          
+          <a href="#fs_8h_1ad0d3acfe49a33edf8707456f08cb7067">fs_fwrite</a><br/>
+          
+          <a href="#fs_8h_1a368ef317b58ba902a325f311258f435b">fs_lchown</a><br/>
+          
+          <a href="#fs_8h_1af47eb72fdd8fba665e28c3e1acd19511">fs_lstat</a><br/>
+          
+          <a href="#fs_8h_1ace0d25de60a62d695596c42ed553c094">fs_mkdir</a><br/>
+          
+          <a href="#fs_8h_1a692c5c1ab59c22347dd7daa7bd011f88">fs_nread</a><br/>
+          
+          <a href="#fs_8h_1aef1157e4725f403d589e75a42be4a3de">fs_nwrite</a><br/>
+          
+          <a href="#fs_8h_1a5a99c338542ee660c51e004a0b4ecef9">fs_open</a><br/>
+          
+          <a href="#fs_8h_1a79807b8f922030cf178ae9ad6e0d4a67">fs_read</a><br/>
+          
+          <a href="#fs_8h_1a28bb828c6e59bf7e1f0e3edc56a15575">fs_rename</a><br/>
+          
+          <a href="#fs_8h_1a3995e30879be02abd9624ddc5f091681">fs_rmdir</a><br/>
+          
+          <a href="#fs_8h_1a627a2ceb109b47d5b4be391990c58fde">fs_size</a><br/>
+          
+          <a href="#fs_8h_1a142585af446658cce0415a64821cc0bb">fs_stat</a><br/>
+          
+          <a href="#fs_8h_1a50cc0551c5b773c752e3c9aeb5ffc2e0">fs_truncate</a><br/>
+          
+          <a href="#fs_8h_1a9499bfbd2acab7e2b256b95540c281c1">fs_write</a><br/>
+          
+        </div>
+
+        <h2>Details</h2>
+        
+
+        
+        <dl class="function">
+          <dt id="fs_8h_1a7e3e713538ac541a1f77eafd047afb5e">fs_chown ()</dt>
+          <dd>
+            <pre>int
+fs_chown            (const char * path, int uid, int gid);</pre>
+
+          
+          <p>Changes ownership of a given file path to a given owner and group </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1abbb42770f8c1404cf545c80b9ea09ab8">fs_close ()</dt>
+          <dd>
+            <pre>int
+fs_close            (FILE * file);</pre>
+
+          
+          <p>Closes a given file descriptor </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a345144ba18aeb8332ce4feb1df43ae0c">fs_error ()</dt>
+          <dd>
+            <pre>void
+fs_error            (const char * prefix);</pre>
+
+          
+          <p>Prints the last error to stderr </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a5a1b8db00d6486cbbe67f7adeb7814f4">fs_exists ()</dt>
+          <dd>
+            <pre>int
+fs_exists           (const char * path);</pre>
+
+          
+          <p>Check if the given `path` exists </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a0e3afb5df8f0be670578efbc4b912a03">fs_fchown ()</dt>
+          <dd>
+            <pre>int
+fs_fchown           (FILE * file, int uid, int gid);</pre>
+
+          
+          <p>Change ownership of a given file descriptor to a given owner and group </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a3f15d961fa2c150d1f50e26cc1afaf60">fs_fnread ()</dt>
+          <dd>
+            <pre>char *
+fs_fnread           (FILE * file, int len);</pre>
+
+          
+          <p>Reads a file by a given file descriptor by a given `n` number of bytes </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a2ed328604cf38f7caa077d4ab5617760">fs_fnwrite ()</dt>
+          <dd>
+            <pre>int
+fs_fnwrite          (FILE * file, const char * buffer, int len);</pre>
+
+          
+          <p>Writes `n` bytes of a buffer to a given file stream </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a8a2e0ce70245b335d8c858893d1e6829">fs_fread ()</dt>
+          <dd>
+            <pre>char *
+fs_fread            (FILE * file);</pre>
+
+          
+          <p>Reads a file by a given file descriptor </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1ad505df494185dbbc8547e85686d12f65">fs_fsize ()</dt>
+          <dd>
+            <pre>size_t
+fs_fsize            (FILE * file);</pre>
+
+          
+          <p>Returns the size of a file from a given file descriptor </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a58ab9f54d9c971e6d0d42debdadd1394">fs_fstat ()</dt>
+          <dd>
+            <pre>fs_stats *
+fs_fstat            (FILE * file);</pre>
+
+          
+          <p>Stats a given file descriptor </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a20f694b22f28b1d4ac912f49fe3dc3c8">fs_ftruncate ()</dt>
+          <dd>
+            <pre>int
+fs_ftruncate        (FILE * file, int len);</pre>
+
+          
+          <p>Truncates a file to a specified length from a given file descriptor </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1ad0d3acfe49a33edf8707456f08cb7067">fs_fwrite ()</dt>
+          <dd>
+            <pre>int
+fs_fwrite           (FILE * file, const char * buffer);</pre>
+
+          
+          <p>Writes a buffer to a given file stream </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a368ef317b58ba902a325f311258f435b">fs_lchown ()</dt>
+          <dd>
+            <pre>int
+fs_lchown           (const char * path, int uid, int gid);</pre>
+
+          
+          <p>Change ownership of a given link path to a given owner and group </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1af47eb72fdd8fba665e28c3e1acd19511">fs_lstat ()</dt>
+          <dd>
+            <pre>fs_stats *
+fs_lstat            (const char * path);</pre>
+
+          
+          <p>Stats a given link path </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1ace0d25de60a62d695596c42ed553c094">fs_mkdir ()</dt>
+          <dd>
+            <pre>int
+fs_mkdir            (const char * path, int mode);</pre>
+
+          
+          <p>Makes a directory and returns 0 on success or -1 on failure </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a692c5c1ab59c22347dd7daa7bd011f88">fs_nread ()</dt>
+          <dd>
+            <pre>char *
+fs_nread            (const char * path, int len);</pre>
+
+          
+          <p>Reads a file by a given file path by a given `n` number of bytes </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1aef1157e4725f403d589e75a42be4a3de">fs_nwrite ()</dt>
+          <dd>
+            <pre>int
+fs_nwrite           (const char * path, const char * buffer, int len);</pre>
+
+          
+          <p>Writes `n` bytes of a buffer to a given file path </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a5a99c338542ee660c51e004a0b4ecef9">fs_open ()</dt>
+          <dd>
+            <pre>FILE *
+fs_open             (const char * path, const char * flags);</pre>
+
+          
+          <p>Opens a file with given flags and returns a file descriptor </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a79807b8f922030cf178ae9ad6e0d4a67">fs_read ()</dt>
+          <dd>
+            <pre>char *
+fs_read             (const char * path);</pre>
+
+          
+          <p>Reads a file by a given file path </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a28bb828c6e59bf7e1f0e3edc56a15575">fs_rename ()</dt>
+          <dd>
+            <pre>int
+fs_rename           (const char * from, const char * to);</pre>
+
+          
+          <p>Moves a path to a new destination </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a3995e30879be02abd9624ddc5f091681">fs_rmdir ()</dt>
+          <dd>
+            <pre>int
+fs_rmdir            (const char * path);</pre>
+
+          
+          <p>Removes a directory and returns 0 on success and -1 on failure </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a627a2ceb109b47d5b4be391990c58fde">fs_size ()</dt>
+          <dd>
+            <pre>size_t
+fs_size             (const char * path);</pre>
+
+          
+          <p>Returns the size of a file from a given file path </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a142585af446658cce0415a64821cc0bb">fs_stat ()</dt>
+          <dd>
+            <pre>fs_stats *
+fs_stat             (const char * path);</pre>
+
+          
+          <p>Stats a given path and returns a `struct stat` </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a50cc0551c5b773c752e3c9aeb5ffc2e0">fs_truncate ()</dt>
+          <dd>
+            <pre>int
+fs_truncate         (const char * path, int len);</pre>
+
+          
+          <p>Truncates a file to a specified len from a given file path </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="fs_8h_1a9499bfbd2acab7e2b256b95540c281c1">fs_write ()</dt>
+          <dd>
+            <pre>int
+fs_write            (const char * path, const char * buffer);</pre>
+
+          
+          <p>Writes a buffer to a given file path </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+      </div>
+      <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+html, body, div  {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1;
+    color: #333;
+}
+
+dt, dd {
+    padding: .5em 0 0 0;
+}
+
+table {
+    width: 100%;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc
+}
+
+pre {
+    overflow: auto;
+}
+
+a, a:visited {
+    color: #216278;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 1em;
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(160, 160, 160, 0.4)
+}
+
+#top-bar h1 {
+    margin: 0;
+    padding: .5em 0;
+}
+
+#content {
+    padding-top: 6em;
+}
+
+div.api-list {
+    -webkit-column-count:4;
+    -moz-column-count:4;
+    column-count:4;
+    -webkit-column-width: 180px;
+    -moz-column-width:  180px;
+    column-width: 180px;
+}
+
+table.package-table td {
+    padding: .25em;
+    margin: 0;
+    border: 0;
+}
+
+table.package-table tr:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    padding: 1.5em 0;
+}
+
+.centered {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.function dt {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: .5em 0;
+}
+
+.function dd {
+    margin: 0 0 2em 0;
+    padding: 0;
+}
+
+.function pre {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 1em;
+    line-height: 140%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.footer {
+    padding: 1em 0;
+    color: #888;
+    font-size: small;
+    text-align: center;
+}

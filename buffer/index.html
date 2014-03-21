@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>buffer API documentation</title>
+    <link rel="stylesheet" type="text/css" href="clibdoc.css">
+  </head>
+  <body>
+    <div id="top-bar">
+      <div class="centered">
+        <div class="left">
+          <h1>buffer</h1>
+        </div>
+        <div class="right navbar">
+          <a href="#content">Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="centered">
+        <h2 id="top">Synopsis</h2>
+
+        <p>Higher level C-string utilities</p>
+        <dl id="description">
+          <dt>Version</dt>
+          <dd>0.2.0</dd>
+
+          <dt>Source</dt>
+          <dd><a href="https://github.com/clibs/buffer">clibs/buffer</a></dd>
+
+          <dt>License</dt>
+          <dd>MIT</dd>
+        </dl>
+
+        <h3>API</h3>
+
+        <div class="api-list">
+          
+          <a href="#buffer_8h_1a8e6b4eb3288af9e69a9cfe5e3ed2b864">buffer_append</a><br/>
+          
+          <a href="#buffer_8h_1ad0f21b4286bf5f73c45de40c995473fa">buffer_clear</a><br/>
+          
+          <a href="#buffer_8h_1a8621b19cbdd1b6903d11085f64ec6b7b">buffer_compact</a><br/>
+          
+          <a href="#buffer_8h_1ad8b6d4ebf775709a168de600761e9892">buffer_equals</a><br/>
+          
+          <a href="#buffer_8h_1a944ea6ca8b4f4a7acd06b0125da56452">buffer_fill</a><br/>
+          
+          <a href="#buffer_8h_1ac0689a2af5c6119d1f1a56d3bcfe192e">buffer_free</a><br/>
+          
+          <a href="#buffer_8h_1a7070f79470352947b557ae31ee6057c3">buffer_indexof</a><br/>
+          
+          <a href="#buffer_8h_1a782cdc6cec98303cda17c10c3cc319d1">buffer_length</a><br/>
+          
+          <a href="#buffer_8h_1a69d6b83c3f75ee5d151536af8912a4ac">buffer_new</a><br/>
+          
+          <a href="#buffer_8h_1a94c39326896b5800336aa72c016a7a35">buffer_new_with_copy</a><br/>
+          
+          <a href="#buffer_8h_1adcd33dce7133243321adfae253334876">buffer_new_with_size</a><br/>
+          
+          <a href="#buffer_8h_1a97fb0a8660f1bc4f97c1270b9a0917a6">buffer_new_with_string</a><br/>
+          
+          <a href="#buffer_8h_1a028fa4eb5e519937f957afd09186636e">buffer_new_with_string_length</a><br/>
+          
+          <a href="#buffer_8h_1acc618a618306c54593bf52b0850233c4">buffer_prepend</a><br/>
+          
+          <a href="#buffer_8h_1a24651e999687001569388412adfc08c6">buffer_print</a><br/>
+          
+          <a href="#buffer_8c_1a4a383de056b49f2c27ee325ae2aca23b">buffer_resize</a><br/>
+          
+          <a href="#buffer_8h_1aac17fe97e50281d0a877efef3160093f">buffer_size</a><br/>
+          
+          <a href="#buffer_8h_1a615f790ce1d9eca90ec96102805783b5">buffer_slice</a><br/>
+          
+          <a href="#buffer_8h_1a113c9756e4c39d29d8cd4e23d182a2b5">buffer_trim</a><br/>
+          
+          <a href="#buffer_8h_1adca050dc3b78909e540353eb3a3a5cd1">buffer_trim_left</a><br/>
+          
+          <a href="#buffer_8h_1a631ded13cc9f3d9a65183ccb4905f8f0">buffer_trim_right</a><br/>
+          
+        </div>
+
+        <h2>Details</h2>
+        
+        <dl class="function">
+          <dt id="structbuffer__t">buffer_t</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a8e6b4eb3288af9e69a9cfe5e3ed2b864">buffer_append ()</dt>
+          <dd>
+            <pre>int
+buffer_append       (<a href="#structbuffer__t">buffer_t</a> self, char * str);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1ad0f21b4286bf5f73c45de40c995473fa">buffer_clear ()</dt>
+          <dd>
+            <pre>void
+buffer_clear        (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a8621b19cbdd1b6903d11085f64ec6b7b">buffer_compact ()</dt>
+          <dd>
+            <pre>ssize_t
+buffer_compact      (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1ad8b6d4ebf775709a168de600761e9892">buffer_equals ()</dt>
+          <dd>
+            <pre>int
+buffer_equals       (<a href="#structbuffer__t">buffer_t</a> self, <a href="#structbuffer__t">buffer_t</a> other);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a944ea6ca8b4f4a7acd06b0125da56452">buffer_fill ()</dt>
+          <dd>
+            <pre>void
+buffer_fill         (<a href="#structbuffer__t">buffer_t</a> self, int c);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1ac0689a2af5c6119d1f1a56d3bcfe192e">buffer_free ()</dt>
+          <dd>
+            <pre>void
+buffer_free         (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a7070f79470352947b557ae31ee6057c3">buffer_indexof ()</dt>
+          <dd>
+            <pre>ssize_t
+buffer_indexof      (<a href="#structbuffer__t">buffer_t</a> self, char * str);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a782cdc6cec98303cda17c10c3cc319d1">buffer_length ()</dt>
+          <dd>
+            <pre>size_t
+buffer_length       (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a69d6b83c3f75ee5d151536af8912a4ac">buffer_new ()</dt>
+          <dd>
+            <pre><a href="#structbuffer__t">buffer_t</a>
+buffer_new          ();</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a94c39326896b5800336aa72c016a7a35">buffer_new_with_copy ()</dt>
+          <dd>
+            <pre><a href="#structbuffer__t">buffer_t</a>
+buffer_new_with_copy(char * str);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1adcd33dce7133243321adfae253334876">buffer_new_with_size ()</dt>
+          <dd>
+            <pre><a href="#structbuffer__t">buffer_t</a>
+buffer_new_with_size(size_t n);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a97fb0a8660f1bc4f97c1270b9a0917a6">buffer_new_with_string ()</dt>
+          <dd>
+            <pre><a href="#structbuffer__t">buffer_t</a>
+buffer_new_with_string(char * str);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a028fa4eb5e519937f957afd09186636e">buffer_new_with_string_length ()</dt>
+          <dd>
+            <pre><a href="#structbuffer__t">buffer_t</a>
+buffer_new_with_string_length(char * str, size_t len);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1acc618a618306c54593bf52b0850233c4">buffer_prepend ()</dt>
+          <dd>
+            <pre>int
+buffer_prepend      (<a href="#structbuffer__t">buffer_t</a> self, char * str);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a24651e999687001569388412adfc08c6">buffer_print ()</dt>
+          <dd>
+            <pre>void
+buffer_print        (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8c_1a4a383de056b49f2c27ee325ae2aca23b">buffer_resize ()</dt>
+          <dd>
+            <pre>int
+buffer_resize       (<a href="#structbuffer__t">buffer_t</a> self, size_t n);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1aac17fe97e50281d0a877efef3160093f">buffer_size ()</dt>
+          <dd>
+            <pre>size_t
+buffer_size         (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a615f790ce1d9eca90ec96102805783b5">buffer_slice ()</dt>
+          <dd>
+            <pre><a href="#structbuffer__t">buffer_t</a>
+buffer_slice        (<a href="#structbuffer__t">buffer_t</a> self, size_t from, ssize_t to);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a113c9756e4c39d29d8cd4e23d182a2b5">buffer_trim ()</dt>
+          <dd>
+            <pre>void
+buffer_trim         (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1adca050dc3b78909e540353eb3a3a5cd1">buffer_trim_left ()</dt>
+          <dd>
+            <pre>void
+buffer_trim_left    (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="buffer_8h_1a631ded13cc9f3d9a65183ccb4905f8f0">buffer_trim_right ()</dt>
+          <dd>
+            <pre>void
+buffer_trim_right   (<a href="#structbuffer__t">buffer_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+      </div>
+      <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>
+    </div>
+  </body>
+</html>

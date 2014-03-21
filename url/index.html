@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>url API documentation</title>
+    <link rel="stylesheet" type="text/css" href="clibdoc.css">
+  </head>
+  <body>
+    <div id="top-bar">
+      <div class="centered">
+        <div class="left">
+          <h1>url</h1>
+        </div>
+        <div class="right navbar">
+          <a href="#content">Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="centered">
+        <h2 id="top">Synopsis</h2>
+
+        <p>Parse URLs much like Node's url module</p>
+        <dl id="description">
+          <dt>Version</dt>
+          <dd>0.0.2</dd>
+
+          <dt>Source</dt>
+          <dd><a href="https://github.com/jwerle/url.h">jwerle/url.h</a></dd>
+
+          <dt>License</dt>
+          <dd>MIT</dd>
+        </dl>
+
+        <h3>API</h3>
+
+        <div class="api-list">
+          
+          <a href="#url_8h_1af9bb422417cb6143567407850f384cb5">get_part</a><br/>
+          
+          <a href="#url_8h_1a8098d7ef28f95ddd4366a43d6d6ff5f5">strff</a><br/>
+          
+          <a href="#url_8h_1af8e0d33430fe3279489e0b6e8b65b1f0">strrwd</a><br/>
+          
+          <a href="#url_8h_1a62a624c1b25ede12002d8b68304e410c">url_data_inspect</a><br/>
+          
+          <a href="#url_8h_1a1b31beb7dc68da348820bc9653202dce">url_free</a><br/>
+          
+          <a href="#url_8h_1a7358f2db0a1ec299bdfb0a9220043196">url_get_auth</a><br/>
+          
+          <a href="#url_8h_1a66759279a565877413cc1c9777dd4fac">url_get_hash</a><br/>
+          
+          <a href="#url_8h_1a220950e3934d9a00d5cbca90dcea77b6">url_get_host</a><br/>
+          
+          <a href="#url_8h_1aca906e125b2875c0ea36a718d3b0c676">url_get_hostname</a><br/>
+          
+          <a href="#url_8h_1a3eefe6ded25ef3448515ce23cb558de1">url_get_path</a><br/>
+          
+          <a href="#url_8h_1af850a727a4a73ac35561aba4b6222f0b">url_get_pathname</a><br/>
+          
+          <a href="#url_8h_1a5fd3f374b67077398f884c5c0f7f866d">url_get_port</a><br/>
+          
+          <a href="#url_8h_1a53be1c0772595828bd30f5544572dadb">url_get_protocol</a><br/>
+          
+          <a href="#url_8h_1afebdddc23932f14b2d236d37f4ba2e13">url_get_query</a><br/>
+          
+          <a href="#url_8h_1a68923d617be29fd06c614647c52bc65a">url_get_search</a><br/>
+          
+          <a href="#url_8h_1ad07e672009b2f1590f705caa78cc9942">url_inspect</a><br/>
+          
+          <a href="#url_8h_1a2378c5f761faffc4f563cbae3caa8e41">url_is_protocol</a><br/>
+          
+          <a href="#url_8h_1acfb98b4eb42020233cd8c068e7a5a8c5">url_is_ssh</a><br/>
+          
+          <a href="#url_8h_1ab4ec7d807affa8753468478de8a9dee4">url_parse</a><br/>
+          
+        </div>
+
+        <h2>Details</h2>
+        
+        <dl class="function">
+          <dt id="structurl__data">url_data</dt>
+          <dd>
+          
+          <p>`url_data` struct that defines parts of a parsed URL such as host and protocol </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+
+        
+        <dl class="function">
+          <dt id="url_8h_1af9bb422417cb6143567407850f384cb5">get_part ()</dt>
+          <dd>
+            <pre>char *
+get_part            (char * url, const char * format, int l);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a8098d7ef28f95ddd4366a43d6d6ff5f5">strff ()</dt>
+          <dd>
+            <pre>char *
+strff               (char * ptr, int n);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1af8e0d33430fe3279489e0b6e8b65b1f0">strrwd ()</dt>
+          <dd>
+            <pre>char *
+strrwd              (char * ptr, int n);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a62a624c1b25ede12002d8b68304e410c">url_data_inspect ()</dt>
+          <dd>
+            <pre>void
+url_data_inspect    (<a href="#structurl__data">url_data_t</a> data);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a1b31beb7dc68da348820bc9653202dce">url_free ()</dt>
+          <dd>
+            <pre>void
+url_free            (<a href="#structurl__data">url_data_t</a> data);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a7358f2db0a1ec299bdfb0a9220043196">url_get_auth ()</dt>
+          <dd>
+            <pre>char *
+url_get_auth        (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a66759279a565877413cc1c9777dd4fac">url_get_hash ()</dt>
+          <dd>
+            <pre>char *
+url_get_hash        (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a220950e3934d9a00d5cbca90dcea77b6">url_get_host ()</dt>
+          <dd>
+            <pre>char *
+url_get_host        (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1aca906e125b2875c0ea36a718d3b0c676">url_get_hostname ()</dt>
+          <dd>
+            <pre>char *
+url_get_hostname    (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a3eefe6ded25ef3448515ce23cb558de1">url_get_path ()</dt>
+          <dd>
+            <pre>char *
+url_get_path        (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1af850a727a4a73ac35561aba4b6222f0b">url_get_pathname ()</dt>
+          <dd>
+            <pre>char *
+url_get_pathname    (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a5fd3f374b67077398f884c5c0f7f866d">url_get_port ()</dt>
+          <dd>
+            <pre>char *
+url_get_port        (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a53be1c0772595828bd30f5544572dadb">url_get_protocol ()</dt>
+          <dd>
+            <pre>char *
+url_get_protocol    (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1afebdddc23932f14b2d236d37f4ba2e13">url_get_query ()</dt>
+          <dd>
+            <pre>char *
+url_get_query       (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a68923d617be29fd06c614647c52bc65a">url_get_search ()</dt>
+          <dd>
+            <pre>char *
+url_get_search      (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1ad07e672009b2f1590f705caa78cc9942">url_inspect ()</dt>
+          <dd>
+            <pre>void
+url_inspect         (char * url);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1a2378c5f761faffc4f563cbae3caa8e41">url_is_protocol ()</dt>
+          <dd>
+            <pre>bool
+url_is_protocol     (char * str);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1acfb98b4eb42020233cd8c068e7a5a8c5">url_is_ssh ()</dt>
+          <dd>
+            <pre>bool
+url_is_ssh          (char * str);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="url_8h_1ab4ec7d807affa8753468478de8a9dee4">url_parse ()</dt>
+          <dd>
+            <pre><a href="#structurl__data">url_data_t</a>
+url_parse           (char * url);</pre>
+
+          
+          <p>Parses a url into parts and returns a `url_data_t *` pointer </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+      </div>
+      <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>
+    </div>
+  </body>
+</html>

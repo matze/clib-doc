@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>inih API documentation</title>
+    <link rel="stylesheet" type="text/css" href="clibdoc.css">
+  </head>
+  <body>
+    <div id="top-bar">
+      <div class="centered">
+        <div class="left">
+          <h1>inih</h1>
+        </div>
+        <div class="right navbar">
+          <a href="#content">Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="centered">
+        <h2 id="top">Synopsis</h2>
+
+        <p>simple .INI file parser</p>
+        <dl id="description">
+          <dt>Version</dt>
+          <dd>0.0.0</dd>
+
+          <dt>Source</dt>
+          <dd><a href="https://github.com/clibs/inih">clibs/inih</a></dd>
+
+          <dt>License</dt>
+          <dd>BSD</dd>
+        </dl>
+
+        <h3>API</h3>
+
+        <div class="api-list">
+          
+          <a href="#ini_8c_1a6f64a9dea7820a6ecd1f61525ce22720">find_char_or_comment</a><br/>
+          
+          <a href="#ini_8h_1a28cc472bfc76c75b558a353973cf7acf">ini_parse</a><br/>
+          
+          <a href="#ini_8h_1a6590c15169ee4e691b01293c637dbb1d">ini_parse_file</a><br/>
+          
+          <a href="#ini_8c_1a106085a60583761d9db2b77929a3abe0">lskip</a><br/>
+          
+          <a href="#ini_8c_1adeed2706622d58ae4098f37974429627">rstrip</a><br/>
+          
+          <a href="#ini_8c_1a12124686d5fdc4fa123955450b1201d0">strncpy0</a><br/>
+          
+        </div>
+
+        <h2>Details</h2>
+        
+
+        
+        <dl class="function">
+          <dt id="ini_8c_1a6f64a9dea7820a6ecd1f61525ce22720">find_char_or_comment ()</dt>
+          <dd>
+            <pre>char *
+find_char_or_comment(const char * s, char c);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="ini_8h_1a28cc472bfc76c75b558a353973cf7acf">ini_parse ()</dt>
+          <dd>
+            <pre>int
+ini_parse           (const char * filename, int(*)(void *user, const char *section, const char *name, const char *value) handler, void * user);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="ini_8h_1a6590c15169ee4e691b01293c637dbb1d">ini_parse_file ()</dt>
+          <dd>
+            <pre>int
+ini_parse_file      (FILE * file, int(*)(void *user, const char *section, const char *name, const char *value) handler, void * user);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="ini_8c_1a106085a60583761d9db2b77929a3abe0">lskip ()</dt>
+          <dd>
+            <pre>char *
+lskip               (const char * s);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="ini_8c_1adeed2706622d58ae4098f37974429627">rstrip ()</dt>
+          <dd>
+            <pre>char *
+rstrip              (char * s);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="ini_8c_1a12124686d5fdc4fa123955450b1201d0">strncpy0 ()</dt>
+          <dd>
+            <pre>char *
+strncpy0            (char * dest, const char * src, size_t size);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+      </div>
+      <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>
+    </div>
+  </body>
+</html>
