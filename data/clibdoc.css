@@ -17,6 +17,10 @@ dt, dd {
     padding: .5em 0 0 0;
 }
 
+table {
+    width: 100%;
+}
+
 hr {
     border: 0;
     height: 1px;
