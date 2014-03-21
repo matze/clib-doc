@@ -2,9 +2,34 @@
 
 import os
 import sys
+import glob
 import argparse
 import json
+import jinja2
+from operator import attrgetter
+from pkg_resources import resource_string
 from clibdoc import doxygen
+
+
+def write_index(dest_dir, modules):
+    env = jinja2.Environment(loader=jinja2.PackageLoader('clibdoc', 'data'))
+    template = env.get_template('main.html')
+
+    with open(os.path.join(dest_dir, 'index.html'), 'w') as f:
+        f.write(template.render(modules=modules))
+
+    with open(os.path.join(dest_dir, 'clibdoc.css'), 'w') as f:
+        f.write(resource_string('clibdoc', 'data/clibdoc.css'))
+
+
+class Module(object):
+    def __init__(self, input_dir, build_dir):
+        self.input_dir = input_dir
+        self.name = os.path.basename(input_dir)
+        self.target_dir = os.path.join(build_dir, self.name)
+
+        pkg_fname = os.path.join(input_dir, 'package.json')
+        self.pkg = json.load(open(pkg_fname, 'r'))
 
 
 if __name__ == '__main__':
@@ -14,12 +39,33 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--destdir', type=str, default='.')
-    parser.add_argument('package', metavar='package.json', nargs=1, type=str)
+    parser.add_argument('--package', metavar='package.json', nargs=1, type=str)
     args = parser.parse_args()
 
-    pkg_fname = args.package[0]
-    pkg_path = os.path.dirname(pkg_fname)
-    pkg = json.load(open(pkg_fname, 'r'))
+    if args.package:
+        pkg_fname = args.package[0]
+        pkg_path = os.path.dirname(pkg_fname)
+        pkg = json.load(open(pkg_fname, 'r'))
 
-    generator = doxygen.Generator(pkg, pkg_path, args.destdir)
-    generator.run()
+        generator = doxygen.Generator(pkg, pkg_path, args.destdir)
+        generator.run()
+    elif os.path.exists('./deps'):
+        build_dir = os.path.abspath('./_docs')
+
+        if not os.path.exists(build_dir):
+            os.makedirs(build_dir)
+
+        module_paths = sorted(glob.glob('./deps/*'))
+        modules = [Module(p, build_dir) for p in module_paths]
+
+        for m in modules:
+            if not os.path.exists(m.target_dir):
+                os.makedirs(m.target_dir)
+
+            generator = doxygen.Generator(m.pkg, m.input_dir, m.target_dir)
+            generator.run()
+            print(" ✓ {}".format(m.name))
+
+        write_index(build_dir, modules)
+    else:
+        print("Neither --package given nor deps/ found")

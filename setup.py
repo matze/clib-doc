@@ -6,6 +6,7 @@ setup(
     packages=find_packages(),
     data_files=[('clibdoc/data', ['data/Doxyfile.in',
                                   'data/index.html',
+                                  'data/main.html',
                                   'data/clibdoc.css'])],
     scripts=['bin/clib-doc']
 )

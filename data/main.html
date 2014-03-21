@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>clib API documentation</title>
+    <link rel="stylesheet" type="text/css" href="clibdoc.css">
+  </head>
+  <body>
+    <div id="top-bar">
+      <div class="centered">
+        <div class="left">
+          <h1>clib documentation</h1>
+        </div>
+        <div class="right navbar">
+          <a href="#content">Up</a>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+      <div class="centered">
+        <h2>Package overview</h2>
+        <table class="package-table">
+          <tbody>
+            {% for m in modules %}
+            <tr>
+              <td><a href="{{ m.target_dir }}/index.html">{{ m.name }}</a></td>
+              <td>{{ m.pkg.description }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
