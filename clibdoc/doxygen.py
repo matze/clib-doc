@@ -163,7 +163,6 @@ class Generator(object):
         with open(os.path.join(self.dest_path, 'clibdoc.css'), 'w') as f:
             f.write(resource_string('clibdoc', 'data/clibdoc.css'))
 
-    def cleanup(self):
         if self._tmpdir:
             shutil.rmtree(self._tmpdir)
 
