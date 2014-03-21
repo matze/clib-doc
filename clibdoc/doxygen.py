@@ -11,13 +11,20 @@ from pkg_resources import resource_string
 
 class Type(object):
     def __init__(self, node):
+        self.refid = None
+
         if node.text:
             self.name = node.text
-            self.refid = None
         else:
-            ref = node.findall('ref')[0]
-            self.name = node[0].text
-            self.refid = ref.get('refid')
+            try:
+                self.name = node[0].text
+            except IndexError:
+                pass
+
+            refs = node.findall('ref')
+
+            if refs:
+                self.refid = refs[0].get('refid')
 
     def __str__(self):
         return self.name
