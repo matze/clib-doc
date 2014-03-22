@@ -4,10 +4,10 @@ import string
 import tempfile
 import shutil
 import xml.etree.ElementTree as et
-import jinja2
 import logging
 from operator import attrgetter
 from pkg_resources import resource_string
+from .jinja import get_env
 
 
 class Type(object):
@@ -63,109 +63,90 @@ class Function(object):
         self.type = Type(memberdef.findall('type')[0])
 
 
-def rpad(value, num):
-    fmt = '{:>' + str(num) + '}'
-    return fmt.format(value)
+def call_doxygen(doxyfile):
+    cmd = ['doxygen', doxyfile]
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE)
+    out, err = proc.communicate()
 
-
-def lpad(value, num):
-    fmt = '{:<' + str(num) + '}'
-    return fmt.format(value)
-
-
-def param_list(params):
-    for p in params:
-        if p.type.refid:
-            yield '<a href="#{}">{}</a> {}'.format(p.type.refid, p.type.name, p.name)
-        else:
-            yield '{} {}'.format(p.type, p.name)
+    if proc.returncode:
+        raise Exception(out + err)
 
 
 def generate(pkg, pkg_path, dest_path='.', extra=None):
-        tmpdir = tempfile.mkdtemp()
-        xml_path = os.path.join(tmpdir, 'xml')
+    tmpdir = tempfile.mkdtemp()
+    xml_path = os.path.join(tmpdir, 'xml')
 
-        sources = []
+    sources = []
 
-        for s in pkg['src']:
-            path = os.path.join(pkg_path, s)
+    for s in pkg['src']:
+        path = os.path.join(pkg_path, s)
 
-            if not os.path.exists(path):
-                path = os.path.join(pkg_path, os.path.basename(s))
-                logging.warn("{} not found, trying {}".format(s, path))
+        if not os.path.exists(path):
+            path = os.path.join(pkg_path, os.path.basename(s))
+            logging.warn("{} not found, trying {}".format(s, path))
 
-            sources.append(path)
+        sources.append(path)
 
-        pid = os.getpid()
-        template = string.Template(resource_string('clibdoc', 'data/Doxyfile.in'))
+    pid = os.getpid()
+    template = string.Template(resource_string('clibdoc', 'data/Doxyfile.in'))
 
-        subs = dict(project_name=pkg['name'],
-                    version=pkg['version'],
-                    input=' '.join(sources),
-                    output_directory=tmpdir)
+    subs = dict(project_name=pkg['name'],
+                version=pkg['version'],
+                input=' '.join(sources),
+                output_directory=tmpdir)
 
-        doxyfile = os.path.join(tmpdir, 'Doxyfile'.format(pid))
+    doxyfile = os.path.join(tmpdir, 'Doxyfile'.format(pid))
 
-        with open(doxyfile, 'w') as f:
-            f.write(template.substitute(subs))
+    with open(doxyfile, 'w') as f:
+        f.write(template.substitute(subs))
 
-        cmd = ['doxygen', doxyfile]
-        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
-                                stderr=subprocess.PIPE)
-        out, err = proc.communicate()
+    call_doxygen(doxyfile)
 
-        if proc.returncode:
-            raise Exception(out + err)
+    tree = et.parse(os.path.join(xml_path, 'index.xml'))
+    root = tree.getroot()
 
-        tree = et.parse(os.path.join(xml_path, 'index.xml'))
-        root = tree.getroot()
+    structs = []
+    functions = {}
 
-        structs = []
-        functions = {}
+    def refid_root(node):
+        fname = os.path.join(xml_path, '{}.xml'.format(node.get('refid')))
+        return et.parse(fname).getroot()
 
-        def refid_root(node):
-            fname = os.path.join(xml_path, '{}.xml'.format(node.get('refid')))
-            return et.parse(fname).getroot()
+    for struct in root.findall("./compound[@kind='struct']"):
+        name = struct.findall('name')[0].text
+        refid = struct.get('refid')
+        sroot = refid_root(struct)
+        structs.append(Struct(name, refid, sroot))
 
-        for struct in root.findall("./compound[@kind='struct']"):
-            name = struct.findall('name')[0].text
-            refid = struct.get('refid')
-            sroot = refid_root(struct)
-            structs.append(Struct(name, refid, sroot))
+    files = (x for x in root.findall("./compound[@kind='file']"))
 
-        files = (x for x in root.findall("./compound[@kind='file']"))
+    for f in files:
+        froot = refid_root(f)
+        funcs = (x for x in f.findall("./member[@kind='function']"))
 
-        for f in files:
-            froot = refid_root(f)
-            funcs = (x for x in f.findall("./member[@kind='function']"))
+        for func in funcs:
+            name = func[0].text
+            refid = func.get('refid')
+            query = "./compounddef/sectiondef/memberdef[@id='{}']".format(refid)
 
-            for func in funcs:
-                name = func[0].text
-                refid = func.get('refid')
-                query = "./compounddef/sectiondef/memberdef[@id='{}']".format(refid)
+            functions[name] = Function(name, refid, froot.findall(query)[0])
 
-                functions[name] = Function(name, refid, froot.findall(query)[0])
+    functions = sorted(functions.values(), key=attrgetter('name'))
+    template = get_env().get_template('index.html')
 
-        env = jinja2.Environment(loader=jinja2.PackageLoader('clibdoc', 'data'))
-        env.filters['lpad'] = lpad
-        env.filters['rpad'] = rpad
-        env.filters['param_list'] = param_list
+    if not os.path.exists(dest_path):
+        os.makedirs(dest_path)
 
-        functions = sorted(functions.values(), key=attrgetter('name'))
-        template = env.get_template('index.html')
+    with open(os.path.join(dest_path, 'index.html'), 'w') as f:
+        f.write(template.render(pkg=pkg,
+                                functions=functions,
+                                structs=structs))
 
-        if not os.path.exists(dest_path):
-            os.makedirs(dest_path)
+    with open(os.path.join(dest_path, 'clibdoc.css'), 'w') as f:
+        f.write(resource_string('clibdoc', 'data/clibdoc.css'))
 
-        with open(os.path.join(dest_path, 'index.html'), 'w') as f:
-            f.write(template.render(pkg=pkg,
-                                    functions=functions,
-                                    structs=structs))
-
-        with open(os.path.join(dest_path, 'clibdoc.css'), 'w') as f:
-            f.write(resource_string('clibdoc', 'data/clibdoc.css'))
-
-        shutil.rmtree(tmpdir)
+    shutil.rmtree(tmpdir)
 
 
 def exists():
