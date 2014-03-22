@@ -1,0 +1,9 @@
+{
+    "name": "clib-doc",
+    "version": "0.1.0",
+    "repo": "matze/clib-doc",
+    "description": "Generate API documentation from a clib module",
+    "keywords": ["documentation"],
+    "license": "MIT",
+    "install": "python setup.py install"
+}
