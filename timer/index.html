@@ -37,11 +37,174 @@
 
         <div class="api-list">
           
+          <a href="#timer_8c_1a606236bfb612a76621fff19d7511ef45">get_ticks</a><br/>
+          
+          <a href="#timer_8h_1ad2a1769bca89ad04caa0825502127425">timer_delta_h</a><br/>
+          
+          <a href="#timer_8h_1a9b7ef696c8fcf8911ef1137c2bd0ae0c">timer_delta_m</a><br/>
+          
+          <a href="#timer_8h_1a13ed7197b869d57ace661b863db56350">timer_delta_ms</a><br/>
+          
+          <a href="#timer_8h_1ac9cefe5299547870e20204f4e022120c">timer_delta_s</a><br/>
+          
+          <a href="#timer_8h_1a2c878c36211b6732a0ce17a1f3d6f0cc">timer_delta_us</a><br/>
+          
+          <a href="#timer_8h_1abff22707db6234da25ce34956da7f58e">timer_pause</a><br/>
+          
+          <a href="#timer_8h_1ad21acc0fb4ec9874ccccdb7c2e1fb682">timer_start</a><br/>
+          
+          <a href="#timer_8h_1a8b143a436fcb2a39b951f91c5c998326">timer_unpause</a><br/>
+          
         </div>
 
         <h2>Details</h2>
         
+        <dl class="function">
+          <dt id="structtimer__t">timer_t</dt>
+          <dd>
+          
+          <p>None</p>
+          
+          <p>Note: `gettimeofday()` is Unix, GNU/Linux and Mac OS X system-specific.</p>
+          
+          <p>The only portable function is time.h's `clock()`, but it isn't very precise.</p>
+          
+          <p>See: </p>
+          
+          <p>Copyright (c) 2011,2013 Alexandre Dantas <</p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
 
+        
+        <dl class="function">
+          <dt id="timer_8c_1a606236bfb612a76621fff19d7511ef45">get_ticks ()</dt>
+          <dd>
+            <pre>suseconds_t
+get_ticks           ();</pre>
+
+          
+          <p>Local function that returns the ticks (number of microsseconds) since the Epoch. </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="timer_8h_1ad2a1769bca89ad04caa0825502127425">timer_delta_h ()</dt>
+          <dd>
+            <pre>long
+timer_delta_h       (<a href="#structtimer__t">timer_t</a> t);</pre>
+
+          
+          <p>Returns the time difference in hours (3600 seconds). </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="timer_8h_1a9b7ef696c8fcf8911ef1137c2bd0ae0c">timer_delta_m ()</dt>
+          <dd>
+            <pre>long
+timer_delta_m       (<a href="#structtimer__t">timer_t</a> t);</pre>
+
+          
+          <p>Returns the time difference in minutes (60 seconds). </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="timer_8h_1a13ed7197b869d57ace661b863db56350">timer_delta_ms ()</dt>
+          <dd>
+            <pre>long
+timer_delta_ms      (<a href="#structtimer__t">timer_t</a> t);</pre>
+
+          
+          <p>Returns the time difference in miliseconds.</p>
+          
+          <p>None</p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="timer_8h_1ac9cefe5299547870e20204f4e022120c">timer_delta_s ()</dt>
+          <dd>
+            <pre>long
+timer_delta_s       (<a href="#structtimer__t">timer_t</a> t);</pre>
+
+          
+          <p>Returns the time difference in seconds. </p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="timer_8h_1a2c878c36211b6732a0ce17a1f3d6f0cc">timer_delta_us ()</dt>
+          <dd>
+            <pre>suseconds_t
+timer_delta_us      (<a href="#structtimer__t">timer_t</a> t);</pre>
+
+          
+          <p>Returns the time difference in microseconds</p>
+          
+          <p>None</p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="timer_8h_1abff22707db6234da25ce34956da7f58e">timer_pause ()</dt>
+          <dd>
+            <pre>void
+timer_pause         (<a href="#structtimer__t">timer_t</a> t);</pre>
+
+          
+          <p>Pauses the timer.</p>
+          
+          <p>None</p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="timer_8h_1ad21acc0fb4ec9874ccccdb7c2e1fb682">timer_start ()</dt>
+          <dd>
+            <pre>void
+timer_start         (<a href="#structtimer__t">timer_t</a> t);</pre>
+
+          
+          <p>Starts the timer.</p>
+          
+          <p>None</p>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="timer_8h_1a8b143a436fcb2a39b951f91c5c998326">timer_unpause ()</dt>
+          <dd>
+            <pre>void
+timer_unpause       (<a href="#structtimer__t">timer_t</a> t);</pre>
+
+          
+          <p>Unpauses the timer.</p>
+          
+          <p>None</p>
+          
+          </dd>
+          <hr />
+        </dl>
         
       </div>
       <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>

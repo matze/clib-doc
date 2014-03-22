@@ -37,11 +37,217 @@
 
         <div class="api-list">
           
+          <a href="#list_8h_1ab3dacc64ceb63b0a0849312b0a14c91c">list_at</a><br/>
+          
+          <a href="#list_8h_1ac2d2be572a896cccd0e76d56eeefcbdb">list_destroy</a><br/>
+          
+          <a href="#list_8h_1a5d73352b7bfa0c5a8b33289d7b27a374">list_find</a><br/>
+          
+          <a href="#list__iterator_8c_1ad16fa29ddbb444070ea65f871e1c0ba2">list_iterator_destroy</a><br/>
+          
+          <a href="#list__iterator_8c_1a3c956afda343b4a6aaf68fbd4b446733">list_iterator_new</a><br/>
+          
+          <a href="#list__iterator_8c_1af4136a8a27bdc8c0f967a708dd03d575">list_iterator_new_from_node</a><br/>
+          
+          <a href="#list__iterator_8c_1a2e5db981e32d3aef49ea79505a0615a6">list_iterator_next</a><br/>
+          
+          <a href="#list_8h_1a97f6f9590b1cdedd5367b9139e9cc4ef">list_lpop</a><br/>
+          
+          <a href="#list_8h_1a7e1b077416813dd474a54826347f7502">list_lpush</a><br/>
+          
+          <a href="#list_8h_1a9dd3eafdb56dcc64689f78fb4acdff3f">list_new</a><br/>
+          
+          <a href="#list__node_8c_1a4ef36e0519514ac481d0d7e0b439d431">list_node_new</a><br/>
+          
+          <a href="#list_8h_1a5ef7843a8a481124bce3e93541ba379a">list_remove</a><br/>
+          
+          <a href="#list_8h_1a53460b319b561ce2201bbf95450f1af7">list_rpop</a><br/>
+          
+          <a href="#list_8h_1a4edfa9b7742154bff4fc2cb05d044af9">list_rpush</a><br/>
+          
         </div>
 
         <h2>Details</h2>
         
+        <dl class="function">
+          <dt id="structlist__iterator__t">list_iterator_t</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="structlist__node">list_node</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="structlist__t">list_t</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
 
+        
+        <dl class="function">
+          <dt id="list_8h_1ab3dacc64ceb63b0a0849312b0a14c91c">list_at ()</dt>
+          <dd>
+            <pre><a href="#structlist__node">list_node_t</a>
+list_at             (<a href="#structlist__t">list_t</a> self, int index);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list_8h_1ac2d2be572a896cccd0e76d56eeefcbdb">list_destroy ()</dt>
+          <dd>
+            <pre>void
+list_destroy        (<a href="#structlist__t">list_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list_8h_1a5d73352b7bfa0c5a8b33289d7b27a374">list_find ()</dt>
+          <dd>
+            <pre><a href="#structlist__node">list_node_t</a>
+list_find           (<a href="#structlist__t">list_t</a> self, void * val);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list__iterator_8c_1ad16fa29ddbb444070ea65f871e1c0ba2">list_iterator_destroy ()</dt>
+          <dd>
+            <pre>void
+list_iterator_destroy(<a href="#structlist__iterator__t">list_iterator_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list__iterator_8c_1a3c956afda343b4a6aaf68fbd4b446733">list_iterator_new ()</dt>
+          <dd>
+            <pre><a href="#structlist__iterator__t">list_iterator_t</a>
+list_iterator_new   (<a href="#structlist__t">list_t</a> list, list_direction_t direction);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list__iterator_8c_1af4136a8a27bdc8c0f967a708dd03d575">list_iterator_new_from_node ()</dt>
+          <dd>
+            <pre><a href="#structlist__iterator__t">list_iterator_t</a>
+list_iterator_new_from_node(<a href="#structlist__node">list_node_t</a> node, list_direction_t direction);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list__iterator_8c_1a2e5db981e32d3aef49ea79505a0615a6">list_iterator_next ()</dt>
+          <dd>
+            <pre><a href="#structlist__node">list_node_t</a>
+list_iterator_next  (<a href="#structlist__iterator__t">list_iterator_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list_8h_1a97f6f9590b1cdedd5367b9139e9cc4ef">list_lpop ()</dt>
+          <dd>
+            <pre><a href="#structlist__node">list_node_t</a>
+list_lpop           (<a href="#structlist__t">list_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list_8h_1a7e1b077416813dd474a54826347f7502">list_lpush ()</dt>
+          <dd>
+            <pre><a href="#structlist__node">list_node_t</a>
+list_lpush          (<a href="#structlist__t">list_t</a> self, <a href="#structlist__node">list_node_t</a> node);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list_8h_1a9dd3eafdb56dcc64689f78fb4acdff3f">list_new ()</dt>
+          <dd>
+            <pre><a href="#structlist__t">list_t</a>
+list_new            ();</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list__node_8c_1a4ef36e0519514ac481d0d7e0b439d431">list_node_new ()</dt>
+          <dd>
+            <pre><a href="#structlist__node">list_node_t</a>
+list_node_new       (void * val);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list_8h_1a5ef7843a8a481124bce3e93541ba379a">list_remove ()</dt>
+          <dd>
+            <pre>void
+list_remove         (<a href="#structlist__t">list_t</a> self, <a href="#structlist__node">list_node_t</a> node);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list_8h_1a53460b319b561ce2201bbf95450f1af7">list_rpop ()</dt>
+          <dd>
+            <pre><a href="#structlist__node">list_node_t</a>
+list_rpop           (<a href="#structlist__t">list_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="list_8h_1a4edfa9b7742154bff4fc2cb05d044af9">list_rpush ()</dt>
+          <dd>
+            <pre><a href="#structlist__node">list_node_t</a>
+list_rpush          (<a href="#structlist__t">list_t</a> self, <a href="#structlist__node">list_node_t</a> node);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
         
       </div>
       <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>

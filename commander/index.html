@@ -37,11 +37,157 @@
 
         <div class="api-list">
           
+          <a href="#commander_8h_1adf86163b994b51d781fe3522eff78381">command_free</a><br/>
+          
+          <a href="#commander_8h_1ad6fd5e1e0c39ee07821b38b951b3c6b4">command_help</a><br/>
+          
+          <a href="#commander_8h_1ac2b0413942927df22c77edcfb63adf92">command_init</a><br/>
+          
+          <a href="#commander_8h_1ac64bb44a6e37c6448213d5c7d0775d01">command_option</a><br/>
+          
+          <a href="#commander_8h_1a8e43b145f69b0970026b31b13a6285a7">command_parse</a><br/>
+          
+          <a href="#commander_8c_1ac23a59734d93655cf974382b024b575c">command_parse_args</a><br/>
+          
+          <a href="#commander_8c_1ad8dac43a03c9fa51cccfa42e92996a5d">command_version</a><br/>
+          
+          <a href="#commander_8c_1a9a17d0c19f2fb4ee55752f4b6840331e">error</a><br/>
+          
+          <a href="#commander_8c_1adf6df208beb8ddd3564630ff10f2e708">normalize_args</a><br/>
+          
+          <a href="#commander_8c_1af6f38fb6cd61d30b6d4f122889073b54">parse_argname</a><br/>
+          
         </div>
 
         <h2>Details</h2>
         
+        <dl class="function">
+          <dt id="structcommand">command</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="structcommand__option__t">command_option_t</dt>
+          <dd>
+          
+          </dd>
+          <hr />
+        </dl>
+        
 
+        
+        <dl class="function">
+          <dt id="commander_8h_1adf86163b994b51d781fe3522eff78381">command_free ()</dt>
+          <dd>
+            <pre>void
+command_free        (<a href="#structcommand">command_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8h_1ad6fd5e1e0c39ee07821b38b951b3c6b4">command_help ()</dt>
+          <dd>
+            <pre>void
+command_help        (<a href="#structcommand">command_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8h_1ac2b0413942927df22c77edcfb63adf92">command_init ()</dt>
+          <dd>
+            <pre>void
+command_init        (<a href="#structcommand">command_t</a> self, const char * name, const char * version);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8h_1ac64bb44a6e37c6448213d5c7d0775d01">command_option ()</dt>
+          <dd>
+            <pre>void
+command_option      (<a href="#structcommand">command_t</a> self, const char * small, const char * large, const char * desc, command_callback_t cb);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8h_1a8e43b145f69b0970026b31b13a6285a7">command_parse ()</dt>
+          <dd>
+            <pre>void
+command_parse       (<a href="#structcommand">command_t</a> self, int argc, char ** argv);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8c_1ac23a59734d93655cf974382b024b575c">command_parse_args ()</dt>
+          <dd>
+            <pre>void
+command_parse_args  (<a href="#structcommand">command_t</a> self, int argc, char ** argv);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8c_1ad8dac43a03c9fa51cccfa42e92996a5d">command_version ()</dt>
+          <dd>
+            <pre>void
+command_version     (<a href="#structcommand">command_t</a> self);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8c_1a9a17d0c19f2fb4ee55752f4b6840331e">error ()</dt>
+          <dd>
+            <pre>void
+error               (char * msg);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8c_1adf6df208beb8ddd3564630ff10f2e708">normalize_args ()</dt>
+          <dd>
+            <pre>char **
+normalize_args      (int * argc, char ** argv);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
+        
+        <dl class="function">
+          <dt id="commander_8c_1af6f38fb6cd61d30b6d4f122889073b54">parse_argname ()</dt>
+          <dd>
+            <pre>void
+parse_argname       (const char * str, char * flag, char * arg);</pre>
+
+          
+          </dd>
+          <hr />
+        </dl>
         
       </div>
       <p class="footer">Generated with <a href="https://github.com/matze/clib-doc/">clib-doc</a></p>
