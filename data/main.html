@@ -22,7 +22,7 @@
           <tbody>
             {% for m in modules %}
             <tr>
-              <td><a href="{{ m.target_dir }}/index.html">{{ m.name }}</a></td>
+              <td><a href="{{ m.name }}/index.html">{{ m.name }}</a></td>
               <td>{{ m.pkg.description }}</td>
             </tr>
           {% endfor %}
