@@ -62,7 +62,7 @@
           <dt id="{{ func.refid }}">{{ func.name }} ()</dt>
           <dd>
             <pre>{% if func.type.refid %}<a href="#{{ func.type.refid }}">{{ func.type.name }}</a>{% else %}{{ func.type.name }}{% endif %}
-{{ func.name|lpad(20) }}({{func.params|param_list|join(', ')}});</pre>
+{{ func.name|lpad(19) }} ({{func.params|param_list|join(', ')}});</pre>
 
           {% for paragraph in func.detailed %}
           <p>{{ paragraph }}</p>
