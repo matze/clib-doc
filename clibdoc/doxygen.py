@@ -5,6 +5,7 @@ import tempfile
 import shutil
 import xml.etree.ElementTree as et
 import jinja2
+import logging
 from operator import attrgetter
 from pkg_resources import resource_string
 
@@ -88,7 +89,16 @@ class Generator(object):
         self._tmpdir = None
 
     def run(self):
-        sources = [os.path.join(self.pkg_path, s) for s in self.pkg['src']]
+        sources = []
+
+        for s in self.pkg['src']:
+            path = os.path.join(self.pkg_path, s)
+
+            if not os.path.exists(path):
+                path = os.path.join(self.pkg_path, os.path.basename(s))
+                logging.warn("{} not found, trying {}".format(s, path))
+
+            sources.append(path)
 
         pid = os.getpid()
         template = string.Template(resource_string('clibdoc', 'data/Doxyfile.in'))
