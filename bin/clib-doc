@@ -46,7 +46,7 @@ if __name__ == '__main__':
         pkg_path = os.path.dirname(pkg_fname)
         pkg = json.load(open(pkg_fname, 'r'))
 
-        doxygen.generate(pkg, pkg_path, args.destdir)
+        doxygen.generate(pkg, pkg_path, args.destdir, doxygen.Info(False))
     elif os.path.exists('./deps'):
         build_dir = './_docs'
 
@@ -62,7 +62,7 @@ if __name__ == '__main__':
             if not os.path.exists(target_dir):
                 os.makedirs(target_dir)
 
-            doxygen.generate(m.pkg, m.input_dir, target_dir)
+            doxygen.generate(m.pkg, m.input_dir, target_dir, doxygen.Info(True))
             print(" ✓ {}".format(m.name))
 
         write_index(build_dir, modules)

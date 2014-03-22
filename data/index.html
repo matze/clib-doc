@@ -12,6 +12,9 @@
           <h1>{{ pkg.name }}</h1>
         </div>
         <div class="right navbar">
+          {% if info.has_index %}
+          <a href="../index.html">Index</a> &nbsp;&middot;&nbsp; 
+          {% endif %}
           <a href="#content">Up</a>
         </div>
       </div>

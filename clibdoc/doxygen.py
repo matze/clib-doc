@@ -63,6 +63,11 @@ class Function(object):
         self.type = Type(memberdef.findall('type')[0])
 
 
+class Info(object):
+    def __init__(self, has_index):
+        self.has_index = has_index
+
+
 def call_doxygen(doxyfile):
     cmd = ['doxygen', doxyfile]
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
@@ -73,7 +78,7 @@ def call_doxygen(doxyfile):
         raise Exception(out + err)
 
 
-def generate(pkg, pkg_path, dest_path='.', extra=None):
+def generate(pkg, pkg_path, dest_path, info):
     tmpdir = tempfile.mkdtemp()
     xml_path = os.path.join(tmpdir, 'xml')
 
@@ -141,7 +146,8 @@ def generate(pkg, pkg_path, dest_path='.', extra=None):
     with open(os.path.join(dest_path, 'index.html'), 'w') as f:
         f.write(template.render(pkg=pkg,
                                 functions=functions,
-                                structs=structs))
+                                structs=structs,
+                                info=info))
 
     with open(os.path.join(dest_path, 'clibdoc.css'), 'w') as f:
         f.write(resource_string('clibdoc', 'data/clibdoc.css'))
