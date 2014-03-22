@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import os
 import sys
@@ -6,7 +7,6 @@ import glob
 import argparse
 import json
 import jinja2
-from operator import attrgetter
 from pkg_resources import resource_string
 from clibdoc import doxygen
 
@@ -46,8 +46,7 @@ if __name__ == '__main__':
         pkg_path = os.path.dirname(pkg_fname)
         pkg = json.load(open(pkg_fname, 'r'))
 
-        generator = doxygen.Generator(pkg, pkg_path, args.destdir)
-        generator.run()
+        doxygen.generate(pkg, pkg_path, args.destdir)
     elif os.path.exists('./deps'):
         build_dir = './_docs'
 
@@ -63,8 +62,7 @@ if __name__ == '__main__':
             if not os.path.exists(target_dir):
                 os.makedirs(target_dir)
 
-            generator = doxygen.Generator(m.pkg, m.input_dir, target_dir)
-            generator.run()
+            doxygen.generate(m.pkg, m.input_dir, target_dir)
             print(" ✓ {}".format(m.name))
 
         write_index(build_dir, modules)

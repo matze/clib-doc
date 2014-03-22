@@ -81,35 +81,30 @@ def param_list(params):
             yield '{} {}'.format(p.type, p.name)
 
 
-class Generator(object):
-    def __init__(self, pkg, pkg_path, dest_path='.'):
-        self.pkg = pkg
-        self.pkg_path = pkg_path
-        self.dest_path = dest_path
-        self._tmpdir = None
+def generate(pkg, pkg_path, dest_path='.', extra=None):
+        tmpdir = tempfile.mkdtemp()
+        xml_path = os.path.join(tmpdir, 'xml')
 
-    def run(self):
         sources = []
 
-        for s in self.pkg['src']:
-            path = os.path.join(self.pkg_path, s)
+        for s in pkg['src']:
+            path = os.path.join(pkg_path, s)
 
             if not os.path.exists(path):
-                path = os.path.join(self.pkg_path, os.path.basename(s))
+                path = os.path.join(pkg_path, os.path.basename(s))
                 logging.warn("{} not found, trying {}".format(s, path))
 
             sources.append(path)
 
         pid = os.getpid()
         template = string.Template(resource_string('clibdoc', 'data/Doxyfile.in'))
-        self._tmpdir = tempfile.mkdtemp()
 
-        subs = dict(project_name=self.pkg['name'],
-                    version=self.pkg['version'],
+        subs = dict(project_name=pkg['name'],
+                    version=pkg['version'],
                     input=' '.join(sources),
-                    output_directory=self._tmpdir)
+                    output_directory=tmpdir)
 
-        doxyfile = os.path.join(self._tmpdir, 'Doxyfile'.format(pid))
+        doxyfile = os.path.join(tmpdir, 'Doxyfile'.format(pid))
 
         with open(doxyfile, 'w') as f:
             f.write(template.substitute(subs))
@@ -122,17 +117,14 @@ class Generator(object):
         if proc.returncode:
             raise Exception(out + err)
 
-        self.generate()
-
-    def generate(self):
-        tree = et.parse(os.path.join(self.xml_path, 'index.xml'))
+        tree = et.parse(os.path.join(xml_path, 'index.xml'))
         root = tree.getroot()
 
         structs = []
         functions = {}
 
         def refid_root(node):
-            fname = os.path.join(self.xml_path, '{}.xml'.format(node.get('refid')))
+            fname = os.path.join(xml_path, '{}.xml'.format(node.get('refid')))
             return et.parse(fname).getroot()
 
         for struct in root.findall("./compound[@kind='struct']"):
@@ -162,23 +154,18 @@ class Generator(object):
         functions = sorted(functions.values(), key=attrgetter('name'))
         template = env.get_template('index.html')
 
-        if not os.path.exists(self.dest_path):
-            os.makedirs(self.dest_path)
+        if not os.path.exists(dest_path):
+            os.makedirs(dest_path)
 
-        with open(os.path.join(self.dest_path, 'index.html'), 'w') as f:
-            f.write(template.render(pkg=self.pkg,
+        with open(os.path.join(dest_path, 'index.html'), 'w') as f:
+            f.write(template.render(pkg=pkg,
                                     functions=functions,
                                     structs=structs))
 
-        with open(os.path.join(self.dest_path, 'clibdoc.css'), 'w') as f:
+        with open(os.path.join(dest_path, 'clibdoc.css'), 'w') as f:
             f.write(resource_string('clibdoc', 'data/clibdoc.css'))
 
-        if self._tmpdir:
-            shutil.rmtree(self._tmpdir)
-
-    @property
-    def xml_path(self):
-        return os.path.join(self._tmpdir, 'xml')
+        shutil.rmtree(tmpdir)
 
 
 def exists():
